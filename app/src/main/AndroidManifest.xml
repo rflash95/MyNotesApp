@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.teknorial.rza.mynotesapp">
 
+    <permission
+        android:name="com.teknorial.rza.mynotesapp.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.teknorial.rza.mynotesapp.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormAddUpdateActivity"></activity>
+        <activity android:name=".FormAddUpdateActivity" />
+
+        <provider
+            android:name=".provider.NoteProvider"
+            android:authorities="com.teknorial.rza.mynotesapp"
+            android:exported="true"
+            android:readPermission="com.teknorial.rza.mynotesapp.READ_DATABASE"
+            android:writePermission="com.teknorial.rza.mynotesapp.WRITE_DATABASE" />
+
     </application>
 
 </manifest>

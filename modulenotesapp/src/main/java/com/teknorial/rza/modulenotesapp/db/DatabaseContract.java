@@ -1,4 +1,4 @@
-package com.teknorial.rza.mynotesapp.db;
+package com.teknorial.rza.modulenotesapp.db;
 
 import android.database.Cursor;
 import android.net.Uri;
